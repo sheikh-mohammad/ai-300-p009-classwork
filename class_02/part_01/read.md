@@ -27,3 +27,5 @@ This is *emphasized*.
 [Markdown Lesson]([url](https://agentfactory.panaversity.org/docs/Markdown-Prompt-Context-Engineering/markdown-language-of-ai/introduction#what-is-markdown))
 
 ![Landscape Image](https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8=)
+
+![Landscape Image](./assets/image-1.png)
