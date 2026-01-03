@@ -16,9 +16,14 @@ This is heading 1
 * Second item
 * Third item
 
+1.  First step
+2.  Second step
+3.  Third step
+
 10. First step
-2. Second step
-3. Third step
+2.  Second step
+3.  Third step
+
 
 ```
 "This program should greet the user and show the current time."
