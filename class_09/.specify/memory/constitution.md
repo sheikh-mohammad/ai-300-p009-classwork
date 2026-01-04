@@ -1,55 +1,51 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+- Version change: N/A → 1.0.0 (initial creation)
+- Added sections: All principles and governance for Python calculator project
+- Templates requiring updates: N/A (no changes needed to existing templates)
+- Follow-up TODOs: None
+-->
+# Python Calculator Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Type Safety First
+All code MUST use type hints for functions, methods, variables, and class attributes. Static type checking with mypy is mandatory before merging any changes. This ensures code clarity, prevents runtime errors, and improves maintainability.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Dependency Management with uv
+The project MUST use uv for dependency management and virtual environment creation. All dependencies must be explicitly declared in pyproject.toml with version constraints. No manual pip installations allowed in development workflow.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Test-First (NON-NEGOTIABLE)
+All calculator functionality must have corresponding unit tests written before implementation. Tests must cover normal operations, edge cases, and error conditions. Test coverage must be maintained at 90% or higher for all calculator operations.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Minimal Viable Calculator
+Start with basic arithmetic operations (+, -, *, /) and expand incrementally. No premature feature addition - implement only what is necessary for core calculator functionality. Follow YAGNI (You Aren't Gonna Need It) principle.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Error Handling and Validation
+Calculator must handle all mathematical edge cases including division by zero, overflow conditions, and invalid inputs. All error states must be explicitly handled with clear, user-friendly error messages.
 
-### [PRINCIPLE_6_NAME]
+### VI. Command-Line First Interface
+Calculator functionality must be accessible via command-line interface as the primary interaction method. Input validation and formatted output are required for all CLI operations.
 
+## Technology Stack Requirements
 
-[PRINCIPLE__DESCRIPTION]
+- **Language**: Python 3.10+ with strict type hints
+- **Dependency Manager**: uv for all package management
+- **Testing**: pytest with coverage reporting
+- **Type Checking**: mypy with strict mode enabled
+- **Formatting**: black for code formatting, isort for import sorting
+- **Linting**: ruff for linting and code quality checks
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Development Workflow
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+- All code changes require passing type checks, linting, and tests
+- Pull requests must include appropriate tests for new functionality
+- Code review must verify type hint completeness and correctness
+- Changes must not break existing functionality or tests
+- Documentation updates required for all public APIs
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution governs all development decisions for the Python calculator project. All PRs and code reviews must verify compliance with these principles. Changes to this constitution require explicit approval and documentation of the rationale. Use this constitution as the primary reference for development decisions and quality standards.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2026-01-04 | **Last Amended**: 2026-01-04
