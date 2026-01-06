@@ -1,0 +1,55 @@
+name: study-notes-creator
+friendly_name: Study Notes Creator
+description: Generates comprehensive study notes for a particular lesson with key points for reinforcement and revision
+version: 1.0.0
+author: User
+tags: [education, notes, study, learning]
+parameters:
+  - name: lesson_topic
+    type: string
+    required: true
+    description: The topic or subject of the lesson to create study notes for
+  - name: lesson_content
+    type: string
+    required: false
+    description: The content of the lesson to base the notes on (optional)
+  - name: key_points
+    type: string
+    required: false
+    description: Specific key points to include in the notes (optional)
+output_format: markdown
+execution:
+  type: template
+  template: |
+    # Study Notes: {{lesson_topic}}
+
+    ## Summary
+
+    [Provide a brief summary of the main concepts covered in this lesson]
+
+    ## Key Terms and Concepts
+
+    - **[Term 1]**: [Definition]
+    - **[Term 2]**: [Definition]
+    - **[Term 3]**: [Definition]
+    - **[Term 4]**: [Definition]
+
+    [Include all important terms and concepts from the lesson with their definitions]
+
+    ## Main Content
+
+    [Detailed notes on the main content of the lesson, organized in a clear and easy-to-read format]
+
+    ## Questions for Review
+
+    1. [Question related to the main concept]
+    2. [Question that tests understanding of key terms]
+    3. [Question that requires application of the concepts]
+    4. [Question that connects to related topics]
+    5. [Question that encourages deeper thinking]
+
+    [Create questions that help reinforce the material and test understanding]
+
+    ## Additional Notes
+
+    [Any additional information that might be helpful for review]
