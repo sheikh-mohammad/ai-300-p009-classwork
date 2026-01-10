@@ -9,17 +9,17 @@ Implementation of a command-line calculator that handles basic arithmetic operat
 
 ## Phase 1: Setup Tasks
 
-- [ ] T001 Create project structure with src/ and tests/ directories
-- [ ] T002 Initialize pyproject.toml with required dependencies and configuration
-- [ ] T003 Set up virtual environment using uv package manager
-- [ ] T004 Create initial file structure for calculator module
+- [X] T001 Create project structure with src/ and tests/ directories
+- [X] T002 Initialize pyproject.toml with required dependencies and configuration
+- [X] T003 Set up virtual environment using uv package manager
+- [X] T004 Create initial file structure for calculator module
 
 ## Phase 2: Foundational Tasks
 
-- [ ] T005 [P] Create calculator package structure with __init__.py files
-- [ ] T006 [P] Set up type checking configuration with mypy
-- [ ] T007 [P] Configure testing framework with pytest
-- [ ] T008 [P] Set up code formatting with black and linting with ruff
+- [X] T005 [P] Create calculator package structure with __init__.py files
+- [X] T006 [P] Set up type checking configuration with mypy
+- [X] T007 [P] Configure testing framework with pytest
+- [X] T008 [P] Set up code formatting with black and linting with ruff
 
 ## Phase 3: User Story 1 - Basic Arithmetic Operations (Priority: P1)
 
