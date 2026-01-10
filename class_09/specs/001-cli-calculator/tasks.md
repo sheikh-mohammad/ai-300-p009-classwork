@@ -23,21 +23,21 @@ Implementation of a command-line calculator that handles basic arithmetic operat
 
 ## Phase 3: User Story 1 - Basic Arithmetic Operations (Priority: P1)
 
-- [ ] T009 [P] [US1] Implement Calculator class with basic arithmetic operations in src/calculator/core.py
-- [ ] T010 [P] [US1] Add type hints to all calculator functions
-- [ ] T011 [US1] Create CLI interface in src/calculator/cli.py using argparse
-- [ ] T012 [US1] Implement argument parsing for two numbers and an operator
-- [ ] T013 [US1] Connect CLI to calculator core functionality
-- [ ] T014 [US1] Write unit tests for basic arithmetic operations in tests/unit/test_calculator.py
-- [ ] T015 [US1] Write integration tests for CLI functionality in tests/integration/test_calculator_cli.py
+- [X] T009 [P] [US1] Implement Calculator class with basic arithmetic operations in src/calculator/core.py
+- [X] T010 [P] [US1] Add type hints to all calculator functions
+- [X] T011 [US1] Create CLI interface in src/calculator/cli.py using argparse
+- [X] T012 [US1] Implement argument parsing for two numbers and an operator
+- [X] T013 [US1] Connect CLI to calculator core functionality
+- [X] T014 [US1] Write unit tests for basic arithmetic operations in tests/unit/test_calculator.py
+- [X] T015 [US1] Write integration tests for CLI functionality in tests/integration/test_calculator_cli.py
 
 ## Phase 4: User Story 3 - Division by Zero Error Handling (Priority: P1)
 
-- [ ] T016 [P] [US3] Implement division by zero error handling in calculator core
-- [ ] T017 [US3] Create appropriate error message for division by zero
-- [ ] T018 [US3] Ensure calculator exits gracefully with error code on division by zero
-- [ ] T019 [US3] Write unit tests for division by zero scenario in tests/unit/test_calculator.py
-- [ ] T020 [US3] Write integration tests for division by zero handling
+- [X] T016 [P] [US3] Implement division by zero error handling in calculator core
+- [X] T017 [US3] Create appropriate error message for division by zero
+- [X] T018 [US3] Ensure calculator exits gracefully with error code on division by zero
+- [X] T019 [US3] Write unit tests for division by zero scenario in tests/unit/test_calculator.py
+- [X] T020 [US3] Write integration tests for division by zero handling
 
 ## Phase 5: User Story 5 - Invalid Input Handling (Priority: P1)
 
