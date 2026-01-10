@@ -1,3 +1,9 @@
+---
+name: study-notes-creator
+description: Creates comprehensive study notes with summaries, key terms, and review questions when users need educational materials organized for studying
+tool: none
+---
+
 # Study Notes Creator Skill
 
 This skill generates comprehensive study notes for a particular lesson with key points for reinforcement and revision.
