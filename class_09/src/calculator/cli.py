@@ -4,6 +4,7 @@ Command-line interface for the calculator.
 
 import sys
 import argparse
+import math
 from typing import Union
 
 from .core import Calculator
@@ -46,6 +47,15 @@ def main() -> None:
     try:
         args = parse_arguments()
 
+        # Additional validation for NaN and infinity
+        if math.isnan(args.first_number) or math.isinf(args.first_number):
+            print(f"Error: Invalid input - first number must be a finite number", file=sys.stderr)
+            sys.exit(1)
+
+        if math.isnan(args.second_number) or math.isinf(args.second_number):
+            print(f"Error: Invalid input - second number must be a finite number", file=sys.stderr)
+            sys.exit(1)
+
         calc = Calculator()
 
         if args.operator == "+":
@@ -65,6 +75,12 @@ def main() -> None:
 
     except ZeroDivisionError as e:
         print(f"Error: {e}", file=sys.stderr)
+        sys.exit(1)
+    except TypeError as e:
+        print(f"Error: Invalid input - {str(e)}", file=sys.stderr)
+        sys.exit(1)
+    except ValueError as e:
+        print(f"Error: Invalid input - {str(e)}", file=sys.stderr)
         sys.exit(1)
     except Exception as e:
         print(f"Error: {e}", file=sys.stderr)

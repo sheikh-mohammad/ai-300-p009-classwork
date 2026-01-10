@@ -3,6 +3,7 @@ Unit tests for the calculator core functionality.
 """
 
 import pytest
+import math
 from src.calculator.core import Calculator
 
 
@@ -87,3 +88,72 @@ class TestCalculator:
         """Test dividing zero by a number."""
         assert self.calc.divide(0, 5) == 0
         assert self.calc.divide(0, -5) == 0
+
+    def test_add_invalid_input_type(self):
+        """Test addition with invalid input types."""
+        with pytest.raises(TypeError, match=r"Expected int or float, got str"):
+            self.calc.add("invalid", 5)
+        with pytest.raises(TypeError, match=r"Expected int or float, got str"):
+            self.calc.add(5, "invalid")
+
+    def test_subtract_invalid_input_type(self):
+        """Test subtraction with invalid input types."""
+        with pytest.raises(TypeError, match=r"Expected int or float, got str"):
+            self.calc.subtract("invalid", 5)
+        with pytest.raises(TypeError, match=r"Expected int or float, got str"):
+            self.calc.subtract(5, "invalid")
+
+    def test_multiply_invalid_input_type(self):
+        """Test multiplication with invalid input types."""
+        with pytest.raises(TypeError, match=r"Expected int or float, got str"):
+            self.calc.multiply("invalid", 5)
+        with pytest.raises(TypeError, match=r"Expected int or float, got str"):
+            self.calc.multiply(5, "invalid")
+
+    def test_divide_invalid_input_type(self):
+        """Test division with invalid input types."""
+        with pytest.raises(TypeError, match=r"Expected int or float, got str"):
+            self.calc.divide("invalid", 5)
+        with pytest.raises(TypeError, match=r"Expected int or float, got str"):
+            self.calc.divide(5, "invalid")
+
+    def test_operations_with_nan_values(self):
+        """Test operations with NaN values."""
+        nan_value = float('nan')
+        with pytest.raises(ValueError, match=r"Value must be a finite number, got nan"):
+            self.calc.add(nan_value, 5)
+        with pytest.raises(ValueError, match=r"Value must be a finite number, got nan"):
+            self.calc.add(5, nan_value)
+
+    def test_operations_with_infinite_values(self):
+        """Test operations with infinite values."""
+        inf_value = float('inf')
+        with pytest.raises(ValueError, match=r"Value must be a finite number, got inf"):
+            self.calc.multiply(inf_value, 5)
+        with pytest.raises(ValueError, match=r"Value must be a finite number, got inf"):
+            self.calc.multiply(5, -inf_value)
+
+    def test_decimal_precision_addition(self):
+        """Test addition with decimal precision."""
+        result = self.calc.add(0.1, 0.2)
+        assert result == pytest.approx(0.3)
+
+    def test_decimal_precision_subtraction(self):
+        """Test subtraction with decimal precision."""
+        result = self.calc.subtract(1.0, 0.9)
+        assert result == pytest.approx(0.1)
+
+    def test_decimal_precision_multiplication(self):
+        """Test multiplication with decimal precision."""
+        result = self.calc.multiply(0.1, 3)
+        assert result == pytest.approx(0.3)
+
+    def test_decimal_precision_division(self):
+        """Test division with decimal precision."""
+        result = self.calc.divide(1, 3)
+        assert result == pytest.approx(0.3333333333333333)
+
+    def test_decimal_precision_complex_operations(self):
+        """Test complex operations with decimal precision."""
+        result = self.calc.multiply(self.calc.add(0.1, 0.2), 10)
+        assert result == pytest.approx(3.0)

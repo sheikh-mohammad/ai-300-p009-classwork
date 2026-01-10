@@ -60,19 +60,65 @@ class TestCalculatorCLI:
             main()
         assert exc_info.value.code == 1
 
-    @patch('sys.argv', ['calc', '5', '%', '3'])
-    @patch('sys.stdout', new_callable=StringIO)
-    def test_cli_invalid_operator_error(self, mock_stdout):
-        """Test CLI invalid operator error handling."""
-        # argparse will catch invalid operators at parse time
-        # This test is more about ensuring the error is handled properly
-        pass  # This will be caught by argparse validation
-
     def test_cli_invalid_number_error(self):
         """Test CLI invalid number error handling."""
-        # This would be tested by trying to convert invalid strings to float
-        # which happens during argument parsing
         with patch('sys.argv', ['calc', 'abc', '+', '3']):
             with patch('sys.stdout', new_callable=StringIO):
-                with pytest.raises(SystemExit):
-                    main()
+                with patch('sys.stderr', new_callable=StringIO):
+                    with pytest.raises(SystemExit) as exc_info:
+                        main()
+                    assert exc_info.value.code == 1
+
+    def test_cli_invalid_operator_error(self):
+        """Test CLI invalid operator error handling."""
+        # argparse will catch invalid operators at parse time
+        import subprocess
+        result = subprocess.run([sys.executable, '-c',
+                                 'import sys; sys.argv = ["calc", "5", "%", "3"]; '
+                                 'from src.calculator.cli import main; main()'],
+                                capture_output=True, text=True)
+        assert result.returncode != 0
+        assert "invalid choice" in result.stderr.lower()
+
+    def test_cli_nan_input_error(self):
+        """Test CLI with NaN input."""
+        with patch('sys.argv', ['calc', 'nan', '+', '3']):
+            with patch('sys.stdout', new_callable=StringIO):
+                with patch('sys.stderr', new_callable=StringIO):
+                    with pytest.raises(SystemExit) as exc_info:
+                        main()
+                    assert exc_info.value.code == 1
+
+    def test_cli_infinity_input_error(self):
+        """Test CLI with infinity input."""
+        with patch('sys.argv', ['calc', 'inf', '+', '3']):
+            with patch('sys.stdout', new_callable=StringIO):
+                with patch('sys.stderr', new_callable=StringIO):
+                    with pytest.raises(SystemExit) as exc_info:
+                        main()
+                    assert exc_info.value.code == 1
+
+    @patch('sys.argv', ['calc', '0.1', '+', '0.2'])
+    @patch('sys.stdout', new_callable=StringIO)
+    def test_cli_decimal_addition(self, mock_stdout):
+        """Test CLI decimal addition operation."""
+        main()
+        output = mock_stdout.getvalue().strip()
+        # The result should be approximately 0.3, considering float precision
+        assert float(output) == pytest.approx(0.3)
+
+    @patch('sys.argv', ['calc', '1.5', '*', '2.5'])
+    @patch('sys.stdout', new_callable=StringIO)
+    def test_cli_decimal_multiplication(self, mock_stdout):
+        """Test CLI decimal multiplication operation."""
+        main()
+        output = mock_stdout.getvalue().strip()
+        assert float(output) == pytest.approx(3.75)
+
+    @patch('sys.argv', ['calc', '7.0', '/', '3.0'])
+    @patch('sys.stdout', new_callable=StringIO)
+    def test_cli_decimal_division(self, mock_stdout):
+        """Test CLI decimal division operation."""
+        main()
+        output = mock_stdout.getvalue().strip()
+        assert float(output) == pytest.approx(2.3333333333333333)

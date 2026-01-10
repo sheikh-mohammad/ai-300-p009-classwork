@@ -41,19 +41,19 @@ Implementation of a command-line calculator that handles basic arithmetic operat
 
 ## Phase 5: User Story 5 - Invalid Input Handling (Priority: P1)
 
-- [ ] T021 [P] [US5] Implement validation for invalid operators (% not in +, -, *, /)
-- [ ] T022 [US5] Implement validation for non-numeric input values
-- [ ] T023 [US5] Create appropriate error messages for invalid input
-- [ ] T024 [US5] Ensure calculator exits gracefully with error code on invalid input
-- [ ] T025 [US5] Write unit tests for invalid input scenarios in tests/unit/test_calculator.py
-- [ ] T026 [US5] Write integration tests for invalid input handling
+- [X] T021 [P] [US5] Implement validation for invalid operators (% not in +, -, *, /)
+- [X] T022 [US5] Implement validation for non-numeric input values
+- [X] T023 [US5] Create appropriate error messages for invalid input
+- [X] T024 [US5] Ensure calculator exits gracefully with error code on invalid input
+- [X] T025 [US5] Write unit tests for invalid input scenarios in tests/unit/test_calculator.py
+- [X] T026 [US5] Write integration tests for invalid input handling
 
 ## Phase 6: User Story 2 - Decimal Number Handling (Priority: P2)
 
-- [ ] T027 [P] [US2] Enhance calculator to handle decimal numbers with appropriate precision
-- [ ] T028 [US2] Update type hints to support float values properly
-- [ ] T029 [US2] Write unit tests for decimal number operations in tests/unit/test_calculator.py
-- [ ] T030 [US2] Verify floating point precision handling in calculations
+- [X] T027 [P] [US2] Enhance calculator to handle decimal numbers with appropriate precision
+- [X] T028 [US2] Update type hints to support float values properly
+- [X] T029 [US2] Write unit tests for decimal number operations in tests/unit/test_calculator.py
+- [X] T030 [US2] Verify floating point precision handling in calculations
 
 ## Phase 7: User Story 4 - Negative Number Support (Priority: P2)
 
