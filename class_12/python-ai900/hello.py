@@ -14,3 +14,5 @@ print(age)
 # 1. Integers - whole numbers
 score = 100
 print(score)
+
+# 2. String - text
