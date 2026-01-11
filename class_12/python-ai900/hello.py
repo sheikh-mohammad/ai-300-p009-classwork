@@ -16,3 +16,4 @@ score = 100
 print(score)
 
 # 2. String - text
+greeting = "Hello, World!"
