@@ -29,3 +29,5 @@ print(greeting)
 # Float - decimal numbers
 price = 19.99
 print(price)
+
+# 4. Boolean - True or False
