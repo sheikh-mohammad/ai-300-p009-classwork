@@ -6,3 +6,6 @@ print(age)
 
 # Variables - hold information/data
 # Python has different data types
+
+
+# Data Types:
