@@ -4,18 +4,18 @@ name = "Alice"
 print(name)
 print(age)
 
-# Variables - hold information/data
+# Variables – hold information/data
 # Python has different data types
 
 
 # Data Types:
 # Four Core Primitive Types
 
-# 1. Integers - whole numbers
+# 1. Integers – whole numbers
 score = 100
 print(score)
 
-# 2. String - text
+# 2. String – text
 greeting = "Hello, World!"
 greeting = 'Hello, World!'
 greeting = 'Hello, World!'
@@ -26,8 +26,8 @@ print(greeting)
 
 # wania's class
 
-# Float - decimal numbers
+# Float – decimal numbers
 price = 19.99
 print(price)
 
-# 4. Boolean - True or False
+# 4. Boolean – True or False
