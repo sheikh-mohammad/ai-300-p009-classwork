@@ -25,3 +25,7 @@ class_name = "wania's class"
 print(greeting)
 
 # wania's class
+
+# Float - decimal numbers
+price = 19.99
+print(price)
