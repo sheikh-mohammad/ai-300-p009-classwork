@@ -37,3 +37,5 @@ print(is_active)
 print(is_logged_in)
 
 
+
+#Variables convention
