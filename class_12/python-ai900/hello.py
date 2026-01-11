@@ -12,3 +12,5 @@ print(age)
 # Four Core Primitive Types
 
 # 1. Integers - whole numbers
+score = 100
+print(score)
