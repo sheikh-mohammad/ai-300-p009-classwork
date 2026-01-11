@@ -20,3 +20,6 @@ greeting = "Hello, World!"
 greeting = 'Hello, World!'
 greeting = 'Hello, World!'
 class_name = "wania's class"
+
+
+print(greeting)
