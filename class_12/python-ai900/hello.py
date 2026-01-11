@@ -17,3 +17,5 @@ print(score)
 
 # 2. String - text
 greeting = "Hello, World!"
+greeting = 'Hello, World!'
+greeting = 'Hello, World!'
