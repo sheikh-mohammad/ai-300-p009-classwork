@@ -10,3 +10,5 @@ print(age)
 
 # Data Types:
 # Four Core Primitive Types
+
+# 1. Integers - whole numbers
