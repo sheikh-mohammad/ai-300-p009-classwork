@@ -39,3 +39,4 @@ print(is_logged_in)
 
 
 #Variables convention
+age of wania = 25
