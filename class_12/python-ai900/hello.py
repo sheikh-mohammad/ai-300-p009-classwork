@@ -31,3 +31,7 @@ price = 19.99
 print(price)
 
 # 4. Boolean – True or False
+is_active = True
+is_logged_in = False
+print(is_active)
+print(is_logged_in)
