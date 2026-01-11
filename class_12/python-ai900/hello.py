@@ -9,3 +9,4 @@ print(age)
 
 
 # Data Types:
+# Four Core Primitive Types
